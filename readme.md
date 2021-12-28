@@ -8,6 +8,7 @@ I put in a few hours a week learning Leetcode challenges to hone my skills in bo
 Problem Number | Diffculty | Javascript | Python | SQL |Description
 --- | --- | --- | --- | --- | ---
 1 | Easy | ● | ● |  | Two Sum
+3 | Medium |  |  |  | Longest Substring Without Repeating Characters
 7 | Easy | ● | ● | | Reverse Integer
 9 | Medium | ● |●| |Palindrome Number
 13 | Easy | ● |●| |Roman to Integer
