@@ -13,12 +13,7 @@ var lengthOfLongestSubstring = function(str) {
     else {
         maxLength = Math.max(maxLength, index - start + 1)
     }
-        seen[str[index]] =  index })
-
-    console.log(seen)
-    console.log(maxLength)
-
-    
+        seen[str[index]] =  index })   
     
 }
 
