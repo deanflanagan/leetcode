@@ -1,13 +1,31 @@
-orig = 'pale'
-# t1 = 'pales'
-# t2 = 'pales'
-t3 = 'bake'
+orig = 'pales'
+t3 = 'vales'
 
-def close_edit(orig, new):
-    if (len(new) -  len(orig))**2 <=1: # len hasn't changed too much
-        if sum([True for x in new if x in orig]) >= len(orig) -1 :
-            return True
-    return False
+def one_away(first, second):
+    if (len(first) - len(second))**2 > 1:
+        return False
+    
+    first_word = first if len(first) < len(second) else first 
+    second_word = first if len(first) > len(second) else second
 
-print(close_edit(orig, t3))
+    d = {
+        -1 : lambda x : x  - 1,
+        0 : lambda x : x ,
+        1 : lambda x : x  + 1,
+    }
 
+    differences ,first_index, second_index = 0,0,0
+    # # get shorter word or just use first
+    # for ind in range(len(second_word)):
+    #     if first_word[first_index] != second_word[second_index]:
+    #         second_index+=1
+    #         differences+=1
+    #     else:
+    #         second_index+=1
+    #         first_index+=1
+    #     print(differences)
+            
+            # first_index +=1
+    return 
+
+print(one_away(orig, t3))
