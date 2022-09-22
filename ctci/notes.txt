@@ -1,8 +1,9 @@
-current problem page 101
+current problem page 105
 current hints page 664
-current solutions page 205
+current solutions page 222
 
 ### problems to return to
 1.5
 1.8
 2.1
+2.2
