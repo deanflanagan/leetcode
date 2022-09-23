@@ -26,6 +26,7 @@ class LinkedList {
         else{
             while(currentNode.next){
                 currentNode = currentNode.next
+                
             }
             currentNode.next = node
         }
