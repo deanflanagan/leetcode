@@ -8,4 +8,5 @@ current solutions page 222
 2.1
 2.2
 2.3
-
+2.5 - revisit after recursion done
+2.6 - do again without this.size

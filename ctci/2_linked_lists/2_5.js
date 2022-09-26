@@ -44,6 +44,7 @@ let one = new LinkedList()
 one.add(7)
 one.add(1)
 one.add(6)
+// one.add(8)
 
 let two = new LinkedList()
 two.add(5)
@@ -59,7 +60,7 @@ const summerRev = (l1, l2) => {
     let nodeOne = l1.head
     let nodeTwo = l2.head
 
-    while(nodeOne && nodeTwo){
+    while(nodeOne || nodeTwo){
         ttl += (nodeOne.data + nodeTwo.data) * multiplier
         multiplier *= 10
 
@@ -73,15 +74,30 @@ const summerRev = (l1, l2) => {
     return final
 }
 
+const addn = (l1, l2, carry, node) => {
+    if(!node){
+        node = new Node()
+    }
+    else {
+        console.log(node)
+    }
+    let val = carry
 
-// let three = new LinkedList()
-// three.add(6)
-// three.add(1)
-// three.add(7)
-
-// let four = new LinkedList()
-// four.add(2)
-// four.add(9)
-// four.add(5)
-
-// note the lists might not be same length. Redo accounting for that.
+    if(l1){
+        val += l1.data
+    }
+    if(l2){
+        val += l2.data
+    }
+    node.data = val % 10 
+    if(l1 || l2){
+        addn( l1 ? l1.next : null, 
+            l2 ? l2.next : l2,
+            val >= 10 ? 1 :0,
+            node)
+    }
+    else{
+        console.log('fin ',node)
+    }
+}
+addn(one.head, two.head,0,null)
