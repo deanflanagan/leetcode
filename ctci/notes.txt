@@ -1,6 +1,5 @@
-current problem page 105
-current hints page 664
-current solutions page 222
+current problem page 121 - recursion
+current solutions page 353
 
 ### problems to return to
 1.5
@@ -10,3 +9,5 @@ current solutions page 222
 2.3
 2.5 - revisit after recursion done
 2.6 - do again without this.size
+2.7
+2.8
