@@ -2,17 +2,17 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import DataTable from "react-data-table-component";
-import movies from "./data.json";
+import data from "./data.json";
 import SortIcon from "@material-ui/icons/ArrowDownward";
 import "./styles.css";
 
 function App() {
-  const [tableRowsData, setTableRowsData] = useState(movies);
+  const [tableRowsData, setTableRowsData] = useState(data);
 
   const searchTags = async (e) => {
-    var searchData = movies.filter((item) => {
+    var searchData = data.filter((item) => {
       if (
-        item.genres
+        item.tags
           .toString()
           .toLowerCase()
           .includes(e.target.value.toLowerCase())
@@ -22,47 +22,70 @@ function App() {
     });
     setTableRowsData(searchData);
   };
-  const conditionalRowStyles = [
-    {
-      when: row => row.difficulty === 'Easy',
-      style: {
-        // backgroundColor: 'green',
-        color: 'green',
-        // backgroundColor: 'orange' 
-      },
-    },
-  ];
-  
-  
+ 
 
   const headerResponsive = [
     {
       name:"Number",
-      selector: "id",
-      sortable: true
+      selector: "number",
     },
     {
       name:"Title",
       selector: "title",
-      sortable: true
     },
     {
       name: "Difficulty ",
       selector: "difficulty",
-      sortable: true
+      sortable: true,
+      conditionalCellStyles: [
+        {
+          when: row => row.difficulty === 'Easy',
+          style: {
+            backgroundColor: 'rgba(63, 195, 128, 0.9)',
+            color: 'white',
+            '&:hover': {
+              cursor: 'pointer',
+            },
+          },
+        },
+        {
+          when: row => row.difficulty === 'Medium',
+          style: {
+            backgroundColor: 'rgba(248, 148, 6, 0.9)',
+            color: 'white',
+            '&:hover': {
+              cursor: 'pointer',
+            },
+          },
+        },
+        {
+          when: row => row.difficulty === 'Tough',
+          style: {
+            backgroundColor: 'rgba(242, 38, 19, 0.9)',
+            color: 'white',
+            '&:hover': {
+              cursor: 'not-allowed',
+            },
+          },
+        },
+      ],
     },
     {
       name: "Language",
       selector: "language",
       sortable: true,
-      // right: true
     }
     ,
     {
       name: "Git Link",
       selector: "git",
-      sortable: false,
-      // right: true
+
+      cell: row => (
+        <a href={row.git} target="_blank" rel="noopener noreferrer">
+          {row.title}
+        </a>
+      ),
+
     }
     ,
     {
@@ -73,8 +96,6 @@ function App() {
         </div>
       ),
       selector: "tags",
-      sortable: true,
-      // right: true
     }
   ];
 
@@ -82,14 +103,11 @@ function App() {
 
   return (
     <DataTable
-      title="Movies"
+      title="Problems"
       columns={headerResponsive}
       data={tableRowsData}
-      defaultSortField="title"
       sortIcon={<SortIcon />}
-      // pagination
-      // conditionalRowStyles={conditionalRowStyles}
-      selectableRows
+      keyField='id'
     />
   );
 }
