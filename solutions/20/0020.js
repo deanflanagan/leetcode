@@ -1,7 +1,3 @@
-/**
- * @param {string} s
- * @return {boolean}
- */
 var isValid = function (s) {
   const closers = { "(": ")", "[": "]", "{": "}" };
 
@@ -37,6 +33,6 @@ const tests = [
   "){",
 ];
 
-tests.map((testStr) => {
-  console.log(isValid(testStr));
-});
+// tests.map((testStr) => {
+//   console.log(isValid(testStr));
+// });

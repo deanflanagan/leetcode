@@ -9,10 +9,11 @@ sort_id = 1 # used for react-data-table-component for unique id
 for dirs,_,files in os.walk(solutions):
     problem_id = dirs.split('/')[-1].lstrip('0')
     if 'metadata.json' in files: # I only add this after solution accepted on leetcode site
-        cur_path = os.path.join(solutions, dirs, [x for x in files if 'metadata.json' in files][0])
+        cur_path = os.path.join(solutions, dirs,'metadata.json' )
         with open(cur_path, 'r') as f:
             # have to eval metadata as array, not single object
             print('found',dirs)
+            print(f)
             solution_array = json.load(f)
             for prob_data in solution_array:
                 prob_data['number'] = problem_id
