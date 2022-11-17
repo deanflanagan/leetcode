@@ -1,3 +1,11 @@
-# Leetcode Challenges
+# Leetcode Style Algorithms
 
-See the link for a React app on S3 with my latest stats and links to all problems and descriptions
+### Features
+
+- Python, JavaScript and SQL Leetcode problems
+- Frontend static React website hosted on S3 
+- Table filtering and live links to my solutions on [Leetcode](https://leetcode.com)
+
+
+![](https://www.yoreoyster.com/wp-content/uploads/2021/06/LeetCode-Review.png)
+
